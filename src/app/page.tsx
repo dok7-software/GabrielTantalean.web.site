@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const artworks = [
   {
@@ -25,27 +25,26 @@ const artworks = [
     description: "A surreal journey through the subconscious",
     image: "/images/ejemplo4.png",
   },
-]
+];
 
 export default function Home() {
   return (
     <div className="container">
       {artworks.map((artwork) => (
-        <div key={artwork.id} className="row mb-5">
-          <div className="col-md-8 offset-md-2">
-            <Image
-              src={artwork.image || "/placeholder.svg"}
-              alt={artwork.title}
-              width={800}
-              height={600}
-              className="img-fluid mb-3"
-            />
+        <div key={artwork.id} className="row mb-12">
+          <div className="col-md-12">
             <h2 className="h4">{artwork.title}</h2>
             <p className="text-muted">{artwork.description}</p>
+            <img
+              src={artwork.image || "/placeholder.svg"}
+              alt={artwork.title}
+              width={2625}
+              height={3500}
+              className="img-fluid mb-3"
+            />
           </div>
         </div>
       ))}
     </div>
-  )
+  );
 }
-
